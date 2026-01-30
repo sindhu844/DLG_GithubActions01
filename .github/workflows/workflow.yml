@@ -12,10 +12,20 @@ jobs:
     steps: 
       - name: checkout from main branch
         uses: actions/checkout@v6
+      - name: upload-artifacts
+        uses: actions/upload-artifact@v6.0.0
+        with:
+          name: source code artifact
+          path: .
   build:
     needs: checkout
     runs-on: ubuntu-latest
     steps:
+      - name: download artifacts
+        uses: actions/download-artifact@v7.0.0
+        with:
+          name: source code artifact
+          path: .
       - name: build java code
         run: mvn clean install
       
