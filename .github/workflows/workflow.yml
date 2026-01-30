@@ -13,6 +13,7 @@ jobs:
       - name: checkout from main branch
         uses: actions/checkout@v6
   build:
+    needs: checkout
     runs-on: ubuntu-latest
     steps:
       - name: build java code
