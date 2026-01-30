@@ -7,11 +7,14 @@ on:
     branches:
       - main
 jobs:
-  build:
+  checkout:
     runs-on: ubuntu-latest
     steps: 
       - name: checkout from main branch
         uses: actions/checkout@v6
+  build:
+    runs-on: ubuntu-latest
+    steps:
       - name: build java code
         run: mvn clean install
       
