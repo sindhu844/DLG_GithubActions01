@@ -1,0 +1,17 @@
+name: workflow-01
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout from main branch
+        uses: actions/checkout@v6
+      - name: build java code
+        run: mvn clean install
+      
