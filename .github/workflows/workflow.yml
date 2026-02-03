@@ -6,6 +6,8 @@ on:
   pull_request:
     branches:
       - main
+env:
+  APP_Name: java application
 jobs:
   checkout:
     runs-on: ubuntu-latest
@@ -28,4 +30,10 @@ jobs:
           path: .
       - name: build java code
         run: mvn clean install
+
+  printingappname:
+    runs-on: ubuntu-latest
+    steps:
+        - name: printing application name 
+          run: echo app name is ${{env.App_Name}}
       
