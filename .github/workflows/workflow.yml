@@ -35,5 +35,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: printing application name 
-          run: echo app name is ${{env.App_Name}}
+          run: echo "app name is ${{env.App_Name}}"
       
