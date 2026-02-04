@@ -35,5 +35,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: printing application name 
-          run: echo "app name is ${{ env.APP_Name }}"
+          run: echo "app name is ${{ env.APP_Name }} or ${{vars.APP_Name}} and my password is ${{secrets.PASS_WORD }}"
       
